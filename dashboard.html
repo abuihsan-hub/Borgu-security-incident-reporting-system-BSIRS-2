@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard - Borgu Security Incident Reporting System</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="dashboard-header">
+
+        <div>
+            <h1>Borgu Security</h1>
+            <p>Incident Reporting System</p>
+        </div>
+
+        <button id="logoutBtn" class="logout-btn">
+            Logout
+        </button>
+
+    </header>
+
+
+    <main class="dashboard-container">
+
+        <section class="welcome-section">
+
+            <h2>Welcome, <span id="userName"></span> 👋</h2>
+          <p>You are logged in to the Borgu Security Incident Reporting System.</p>
+
+            <p>
+                Report security incidents and help improve
+                safety within Borgu communities.
+            </p>
+
+        </section>
+
+
+        <section class="dashboard-cards">
+
+            <div class="dashboard-card">
+
+                <h3>🚨 Report an Incident</h3>
+
+                <p>
+                    Submit information about a security incident
+                    in your community.
+                </p>
+
+                <a href="report.html" class="dashboard-btn">
+                    Report Incident
+                </a>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <h3>📋 My Reports</h3>
+
+                <p>
+                    View the security incidents you have previously reported.
+                </p>
+
+                <a href="reports.html" class="dashboard-btn">
+                    View My Reports
+                </a>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <h3>👤 My Profile</h3>
+
+                <p>
+                    View and manage your account information.
+                </p>
+
+                <a href="profile.html" class="dashboard-btn">
+                    View Profile
+                </a>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <h3>☎️ Emergency Contacts</h3>
+
+                <p>
+                    Find important emergency and security contacts.
+                </p>
+
+                <a href="emergency.html" class="dashboard-btn">
+                    Emergency Contacts
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+  <link rel="stylesheet" href="style.css">
+
+
+<script src="app.js"></script>
+<script src="auth.js"></script>
+
+<script>
+    if (localStorage.getItem("loggedIn") !== "true") {
+        window.location.href = "login.html";
+    }
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const savedUser = localStorage.getItem("registeredUser");
+    const userName = document.getElementById("userName");
+
+    if (savedUser && userName) {
+
+        const user = JSON.parse(savedUser);
+
+        userName.textContent = user.name;
+
+    } else {
+
+        userName.textContent = "User";
+
+    }
+
+});
+</script>
+  
+</body>
+</html>  

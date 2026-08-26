@@ -1,0 +1,1153 @@
+/* =====================================================
+   BORGU SECURITY INCIDENT REPORTING SYSTEM
+   MAIN STYLESHEET
+===================================================== */
+
+
+/* =========================
+   GENERAL SETTINGS
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #222;
+    background: #f5f7f6;
+}
+
+a {
+    text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navbar {
+    width: 100%;
+    padding: 18px 8%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: #ffffff;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+}
+
+.logo span {
+    font-size: 25px;
+    font-weight: bold;
+    color: #0b5d3b;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+nav a {
+    color: #222;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #0b5d3b;
+}
+
+
+/* =========================
+   USER LOGIN BUTTON
+========================= */
+
+.login-btn {
+    padding: 10px 20px;
+
+    background: #0b5d3b;
+
+    color: white !important;
+
+    border-radius: 6px;
+
+    font-weight: bold;
+}
+
+.login-btn:hover {
+    background: #08472e;
+}
+
+
+/* =========================
+   AGENCY LOGIN BUTTON
+========================= */
+
+.agency-login-btn {
+    padding: 10px 20px;
+
+    background: #222;
+
+    color: white !important;
+
+    border-radius: 6px;
+
+    font-weight: bold;
+
+    transition: 0.2s ease;
+}
+
+.agency-login-btn:hover {
+    background: #0b5d3b;
+}
+
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+    min-height: 80vh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 80px 8%;
+
+    background: linear-gradient(
+        135deg,
+        #f2f8f5,
+        #ffffff
+    );
+}
+
+.hero-content {
+    max-width: 750px;
+}
+
+.welcome-text {
+    color: #0b5d3b;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 55px;
+
+    line-height: 1.1;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    display: block;
+
+    color: #0b5d3b;
+}
+
+.hero-description {
+    font-size: 18px;
+
+    max-width: 650px;
+
+    color: #555;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.hero-buttons {
+    display: flex;
+
+    gap: 15px;
+}
+
+.primary-btn,
+.secondary-btn {
+    display: inline-block;
+
+    padding: 14px 25px;
+
+    border-radius: 7px;
+
+    font-weight: bold;
+
+    transition: 0.2s ease;
+}
+
+.primary-btn {
+    background: #0b5d3b;
+
+    color: white;
+}
+
+.primary-btn:hover {
+    background: #08472e;
+
+    transform: translateY(-1px);
+}
+
+.secondary-btn {
+    border: 1px solid #0b5d3b;
+
+    color: #0b5d3b;
+
+    background: white;
+}
+
+.secondary-btn:hover {
+    background: #f2f8f5;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.about,
+.how-it-works {
+    padding: 90px 8%;
+}
+
+.section-title {
+    text-align: center;
+
+    margin-bottom: 50px;
+}
+
+.section-title p {
+    color: #0b5d3b;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.section-title h2 {
+    font-size: 35px;
+
+    margin-top: 10px;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-content {
+    max-width: 800px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+.about-content p {
+    margin-bottom: 20px;
+
+    color: #555;
+
+    font-size: 17px;
+}
+
+
+/* =========================
+   HOW IT WORKS
+========================= */
+
+.how-it-works {
+    background: #f8f8f8;
+}
+
+.steps {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.step {
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.step-number {
+    font-size: 30px;
+
+    font-weight: bold;
+
+    color: #0b5d3b;
+
+    margin-bottom: 15px;
+}
+
+.step h3 {
+    margin-bottom: 10px;
+}
+
+.step p {
+    color: #666;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #0b5d3b;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 40px 8%;
+}
+
+.footer-content h3 {
+    font-size: 25px;
+
+    margin-bottom: 10px;
+}
+
+.footer-content p {
+    margin-bottom: 5px;
+}
+
+.copyright {
+    margin-top: 25px;
+
+    padding-top: 20px;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.2);
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   LOGIN & REGISTRATION
+===================================================== */
+
+.login-container {
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 30px;
+
+    background: linear-gradient(
+        135deg,
+        #eef7f2,
+        #ffffff
+    );
+}
+
+.login-box {
+    width: 100%;
+
+    max-width: 430px;
+
+    padding: 38px;
+
+    background: white;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.10);
+
+    text-align: center;
+}
+
+.login-box h1 {
+    margin-bottom: 5px;
+
+    color: #0b5d3b;
+}
+
+.login-box h2 {
+    margin-top: 0;
+
+    font-size: 20px;
+}
+
+.login-subtitle {
+    margin-bottom: 25px;
+
+    color: #666;
+}
+
+.form-group {
+    text-align: left;
+
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid #d5d5d5;
+
+    border-radius: 7px;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #0b5d3b;
+
+    box-shadow:
+        0 0 0 3px rgba(11, 93, 59, 0.08);
+}
+
+.login-box .login-btn {
+    width: 100%;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #0b5d3b;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    margin-top: 5px;
+}
+
+.login-box .login-btn:hover {
+    background: #08472e;
+}
+
+.register-link,
+.home-link {
+    margin-top: 18px;
+}
+
+.register-link a,
+.home-link a {
+    color: #0b5d3b;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   REGISTRATION FORM
+========================= */
+
+.register-error {
+    color: #b00020;
+
+    font-size: 14px;
+
+    margin-top: 6px;
+}
+
+.register-success {
+    color: #0b5d3b;
+
+    font-size: 14px;
+
+    margin-top: 6px;
+}
+
+
+/* =====================================================
+   COMMUNITY DASHBOARD
+===================================================== */
+
+.dashboard-container {
+    width: 100%;
+
+    max-width: 1150px;
+
+    margin: 0 auto;
+
+    padding: 40px 25px;
+}
+
+.welcome-section {
+    background: linear-gradient(
+        135deg,
+        #0b5d3b,
+        #08764a
+    );
+
+    color: white;
+
+    padding: 35px;
+
+    border-radius: 14px;
+
+    margin-bottom: 30px;
+
+    box-shadow:
+        0 8px 25px rgba(11, 93, 59, 0.18);
+}
+
+.welcome-section h2 {
+    font-size: 28px;
+
+    margin-bottom: 8px;
+}
+
+.welcome-section p {
+    opacity: 0.9;
+}
+
+
+/* =========================
+   DASHBOARD CARDS
+========================= */
+
+.dashboard-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+
+    margin-bottom: 35px;
+}
+
+.dashboard-card {
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.06);
+
+    border: 1px solid #eeeeee;
+}
+
+.dashboard-card h3 {
+    font-size: 15px;
+
+    color: #666;
+
+    margin-bottom: 10px;
+}
+
+.dashboard-card h2 {
+    color: #0b5d3b;
+
+    font-size: 30px;
+}
+
+
+/* =========================
+   DASHBOARD BUTTONS
+========================= */
+
+.dashboard-btn {
+    display: inline-block;
+
+    margin-top: 15px;
+
+    padding: 12px 20px;
+
+    background: #0b5d3b;
+
+    color: white;
+
+    border-radius: 7px;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+.dashboard-btn:hover {
+    background: #08472e;
+
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   REPORT FORM
+===================================================== */
+
+.report-container {
+    width: 100%;
+
+    max-width: 700px;
+
+    margin: 40px auto;
+
+    padding: 35px;
+
+    background: white;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.report-container h1 {
+    color: #0b5d3b;
+
+    margin-bottom: 8px;
+}
+
+.report-container > p {
+    color: #666;
+
+    margin-bottom: 25px;
+}
+
+.report-container label {
+    display: block;
+
+    margin-top: 18px;
+
+    margin-bottom: 7px;
+
+    font-weight: bold;
+}
+
+.report-container input,
+.report-container select,
+.report-container textarea {
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid #d5d5d5;
+
+    border-radius: 7px;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+.report-container textarea {
+    resize: vertical;
+}
+
+.report-container input:focus,
+.report-container select:focus,
+.report-container textarea:focus {
+    border-color: #0b5d3b;
+
+    box-shadow:
+        0 0 0 3px rgba(11, 93, 59, 0.08);
+}
+
+.report-container button {
+    width: 100%;
+
+    margin-top: 25px;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #0b5d3b;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.report-container button:hover {
+    background: #08472e;
+}
+
+.report-container > a {
+    color: #0b5d3b;
+
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   MY REPORTS
+===================================================== */
+
+.reports-section {
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.reports-section h2 {
+    color: #0b5d3b;
+
+    margin-bottom: 8px;
+}
+
+.reports-section > p {
+    color: #666;
+
+    margin-bottom: 25px;
+}
+
+#reportsList,
+#agencyReportsList {
+    display: grid;
+
+    gap: 18px;
+}
+
+.report-card {
+    background: #ffffff;
+
+    border: 1px solid #e4e8e5;
+
+    border-left: 5px solid #0b5d3b;
+
+    padding: 22px;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.report-card h3 {
+    color: #0b5d3b;
+
+    margin-bottom: 15px;
+}
+
+.report-card p {
+    margin-bottom: 7px;
+
+    color: #555;
+}
+
+.report-card strong {
+    color: #222;
+}
+
+
+/* =====================================================
+   AGENCY DASHBOARD
+===================================================== */
+
+.agency-header {
+    background: #0b5d3b;
+
+    color: white;
+
+    padding: 18px 6%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    box-shadow:
+        0 3px 15px rgba(0, 0, 0, 0.12);
+}
+
+.agency-header h1 {
+    font-size: 22px;
+}
+
+.agency-header p {
+    font-size: 14px;
+
+    opacity: 0.9;
+}
+
+#agencyLogoutBtn {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+
+    background: transparent;
+
+    color: white;
+
+    padding: 9px 18px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+#agencyLogoutBtn:hover {
+    background: white;
+
+    color: #0b5d3b;
+}
+
+
+/* =====================================================
+   STATUS STYLING
+===================================================== */
+
+.status-pending {
+    color: #9a6700;
+
+    font-weight: bold;
+}
+
+.status-review {
+    color: #1769aa;
+
+    font-weight: bold;
+}
+
+.status-resolved {
+    color: #0b5d3b;
+
+    font-weight: bold;
+}
+
+.status-critical {
+    color: #b00020;
+
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   AGENCY STATUS SELECT
+===================================================== */
+
+.status-select {
+    width: 100%;
+
+    margin-top: 10px;
+
+    padding: 11px;
+
+    border: 1px solid #d5d5d5;
+
+    border-radius: 7px;
+
+    background: white;
+
+    font-size: 15px;
+
+    outline: none;
+
+    cursor: pointer;
+}
+
+.status-select:focus {
+    border-color: #0b5d3b;
+
+    box-shadow:
+        0 0 0 3px rgba(11, 93, 59, 0.08);
+}
+
+
+/* =====================================================
+   MOBILE DESIGN
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .dashboard-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+}
+
+
+/* =====================================================
+   TABLET / MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 15px 5%;
+
+        flex-wrap: wrap;
+
+        gap: 12px;
+    }
+
+    nav {
+        width: 100%;
+
+        display: flex;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 8px;
+    }
+
+    /* IMPORTANT:
+       Do NOT hide Agency Login */
+
+    nav a {
+        display: inline-block;
+
+        font-size: 14px;
+    }
+
+    nav a.login-btn,
+    nav a.agency-login-btn {
+        padding: 9px 12px;
+    }
+
+
+    .hero {
+        padding: 60px 5%;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        text-align: center;
+    }
+
+    .about,
+    .how-it-works {
+        padding: 60px 5%;
+    }
+
+    .section-title h2 {
+        font-size: 28px;
+    }
+
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-container {
+        padding: 25px 15px;
+    }
+
+    .welcome-section {
+        padding: 25px;
+    }
+
+    .welcome-section h2 {
+        font-size: 23px;
+    }
+
+    .report-container {
+        margin: 20px 15px;
+
+        padding: 25px 20px;
+    }
+
+    .agency-header {
+        padding: 15px 20px;
+
+        gap: 10px;
+    }
+
+    .agency-header h1 {
+        font-size: 18px;
+    }
+
+    .agency-header p {
+        font-size: 12px;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL PHONES
+===================================================== */
+
+@media (max-width: 480px) {
+
+    .logo span {
+        font-size: 21px;
+    }
+
+    nav {
+        gap: 6px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    nav a.login-btn,
+    nav a.agency-login-btn {
+        padding: 8px 10px;
+    }
+
+    .login-box {
+        padding: 28px 20px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .report-container h1 {
+        font-size: 25px;
+    }
+
+    .report-card {
+        padding: 18px;
+    }
+
+}
+/* =====================================================
+   AGENCY ACTION / RESPONSE
+===================================================== */
+
+.action-label {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.agency-action {
+    width: 100%;
+    min-height: 100px;
+
+    padding: 12px;
+
+    border: 1px solid #d5d5d5;
+    border-radius: 7px;
+
+    font-size: 15px;
+
+    resize: vertical;
+
+    outline: none;
+}
+
+.agency-action:focus {
+    border-color: #0b5d3b;
+
+    box-shadow:
+        0 0 0 3px rgba(11, 93, 59, 0.08);
+}
+
+.save-action-btn {
+    margin-top: 12px;
+
+    padding: 11px 18px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #0b5d3b;
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.save-action-btn:hover {
+    background: #08472e;
+}

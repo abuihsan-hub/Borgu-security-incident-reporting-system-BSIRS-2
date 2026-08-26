@@ -1,0 +1,717 @@
+<!DOCTYPE html>  <html lang="en">  <head>  <meta charset="UTF-8">  
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+
+<title>Agency Dashboard - Borgu Security</title>  
+
+<link rel="stylesheet" href="style.css">
+
+</head>  <body>  <!-- ==========================================  
+     AGENCY HEADER  
+=========================================== -->  
+
+<header class="agency-header">  
+
+    <div>  
+
+        <h1>🛡️ Borgu Security</h1>  
+
+        <p>Agency Security Dashboard</p>  
+
+    </div>  
+
+
+    <button id="agencyLogoutBtn">  
+        Logout  
+    </button>  
+
+</header>  
+
+
+
+<main class="dashboard-container">  
+
+
+    <!-- ==========================================  
+         WELCOME SECTION  
+    =========================================== -->  
+
+    <section class="welcome-section">  
+
+        <h2>  
+
+            Welcome,  
+
+            <span id="agencyName"></span>  
+
+            👮  
+
+        </h2>  
+
+
+        <p>  
+
+            Manage and review security incidents  
+            submitted by community users.  
+
+        </p>  
+
+    </section>  
+
+
+
+    <!-- ==========================================  
+         STATISTICS  
+    =========================================== -->  
+
+    <section class="dashboard-grid">  
+
+
+        <div class="dashboard-card">  
+
+            <h3>📋 Total Reports</h3>  
+
+            <h2 id="totalReports">  
+                0  
+            </h2>  
+
+        </div>  
+
+
+
+        <div class="dashboard-card">  
+
+            <h3>🕐 Pending</h3>  
+
+            <h2 id="pendingReports">  
+                0  
+            </h2>  
+
+        </div>  
+
+
+
+        <div class="dashboard-card">  
+
+            <h3>🔍 Under Review</h3>  
+
+            <h2 id="reviewReports">  
+                0  
+            </h2>  
+
+        </div>  
+
+
+
+        <div class="dashboard-card">  
+
+            <h3>✅ Resolved</h3>  
+
+            <h2 id="resolvedReports">  
+                0  
+            </h2>  
+
+        </div>  
+
+
+    </section>  
+
+
+
+    <!-- ==========================================  
+         INCIDENT REPORTS  
+    =========================================== -->  
+
+    <section class="reports-section">  
+
+
+        <h2>  
+            🚨 Security Incident Reports  
+        </h2>  
+
+
+        <p>  
+
+            Reports submitted by community users  
+            will appear here.  
+
+        </p>  
+
+
+
+        <div id="agencyReportsList">  
+
+            <p>  
+                Loading reports...  
+            </p>  
+
+        </div>  
+
+
+    </section>  
+
+
+
+    <!-- ==========================================  
+         BACK TO HOMEPAGE  
+    =========================================== -->  
+
+    <p class="home-link">  
+
+        <a href="index.html">  
+            ← Back to Homepage  
+        </a>  
+
+    </p>  
+
+
+</main>  
+
+
+
+<!-- ==========================================  
+     AGENCY DASHBOARD JAVASCRIPT  
+=========================================== -->  
+
+<script>  
+
+    // ==========================================  
+    // CHECK AGENCY LOGIN  
+    // ==========================================  
+
+    const savedAgency =  
+        localStorage.getItem("loggedInAgency");  
+
+
+    if (!savedAgency) {  
+
+        window.location.href =  
+            "agency-login.html";  
+
+    } else {  
+
+
+        // ==========================================  
+        // GET AGENCY INFORMATION  
+        // ==========================================  
+
+        const agency =  
+            JSON.parse(savedAgency);  
+
+
+        // Show agency name  
+
+        const agencyName =  
+            document.getElementById(  
+                "agencyName"  
+            );  
+
+
+        if (agencyName) {  
+
+            agencyName.textContent =  
+                agency.name;  
+
+        }  
+
+
+
+        // ==========================================  
+        // LOAD REPORTS FUNCTION  
+        // ==========================================  
+
+        function loadReports() {  
+
+
+            // Get reports from localStorage  
+
+            const savedReports =  
+                localStorage.getItem(  
+                    "incidentReports"  
+                );  
+
+
+            const reports =  
+                savedReports  
+                    ? JSON.parse(savedReports)  
+                    : [];  
+
+
+
+            // ======================================  
+            // TOTAL REPORTS  
+            // ======================================  
+
+            document.getElementById(  
+                "totalReports"  
+            ).textContent =  
+                reports.length;  
+
+
+
+            // ======================================  
+            // PENDING REPORTS  
+            // ======================================  
+
+            const pendingReports =  
+                reports.filter(  
+                    function(report) {  
+
+                        return report.status ===  
+                            "Pending";  
+
+                    }  
+                ).length;  
+
+
+            document.getElementById(  
+                "pendingReports"  
+            ).textContent =  
+                pendingReports;  
+
+
+
+            // ======================================  
+            // UNDER REVIEW  
+            // ======================================  
+
+            const reviewReports =  
+                reports.filter(  
+                    function(report) {  
+
+                        return report.status ===  
+                            "Under Review";  
+
+                    }  
+                ).length;  
+
+
+            document.getElementById(  
+                "reviewReports"  
+            ).textContent =  
+                reviewReports;  
+
+
+
+            // ======================================  
+            // RESOLVED  
+            // ======================================  
+
+            const resolvedReports =  
+                reports.filter(  
+                    function(report) {  
+
+                        return report.status ===  
+                            "Resolved";  
+
+                    }  
+                ).length;  
+
+
+            document.getElementById(  
+                "resolvedReports"  
+            ).textContent =  
+                resolvedReports;  
+
+
+
+            // ======================================  
+            // REPORTS CONTAINER  
+            // ======================================  
+
+            const reportsList =  
+                document.getElementById(  
+                    "agencyReportsList"  
+                );  
+
+
+
+            // ======================================  
+            // NO REPORTS  
+            // ======================================  
+
+            if (reports.length === 0) {  
+
+                reportsList.innerHTML = `  
+
+                    <div class="report-card">  
+
+                        <h3>  
+                            📭 No Incident Reports  
+                        </h3>  
+
+                        <p>  
+
+                            There are currently no  
+                            incident reports submitted  
+                            by community users.  
+
+                        </p>  
+
+                    </div>  
+
+                `;  
+
+                return;  
+
+            }  
+
+
+
+            // ======================================  
+            // CLEAR OLD REPORTS  
+            // ======================================  
+
+            reportsList.innerHTML = "";  
+
+
+
+            // ======================================  
+            // DISPLAY REPORTS  
+            // ======================================  
+
+            reports.forEach(  
+                function(report) {  
+
+
+                    const reportCard =  
+                        document.createElement(  
+                            "div"  
+                        );  
+
+
+                    reportCard.className =  
+                        "report-card";  
+
+
+
+                    reportCard.innerHTML = `  
+
+                        <h3>  
+                            🚨 ${report.type}  
+                        </h3>  
+
+
+                        <p>  
+
+                            <strong>  
+                                Reporter:  
+                            </strong>  
+
+                            ${report.reporterName ||  
+                            "Not available"}  
+
+                        </p>  
+
+
+                        <p>  
+
+                            <strong>  
+                                Email:  
+                            </strong>  
+
+                            ${report.reporterEmail ||  
+                            "Not available"}  
+
+                        </p>  
+
+
+                        <p>  
+
+                            <strong>  
+                                Location:  
+                            </strong>  
+
+                            ${report.location}  
+
+                        </p>  
+
+
+                        <p>  
+
+                            <strong>  
+                                Date:  
+                            </strong>  
+
+                            ${report.date}  
+
+                        </p>  
+
+
+                        <p>  
+
+                            <strong>  
+                                Time:  
+                            </strong>  
+
+                            ${report.time}  
+
+                        </p>  
+
+
+                        <p>  
+
+                            <strong>  
+                                Severity:  
+                            </strong>  
+
+                            ${report.severity}  
+
+                        </p>  
+
+
+                        <p>  
+
+                            <strong>  
+                                Description:  
+                            </strong>  
+
+                            ${report.description}  
+
+                        </p>  
+
+
+                        <p>  
+
+                            <strong>  
+                                Current Status:  
+                            </strong>  
+
+                            ${report.status}  
+
+                        </p>  
+
+
+
+                        <!-- STATUS -->  
+
+                        <label>  
+
+                            <strong>  
+                                Update Status:  
+                            </strong>  
+
+                        </label>  
+
+
+                        <select  
+                            class="status-select"  
+                            data-id="${report.id}"  
+                        >  
+
+                            <option  
+                                value="Pending"  
+                                ${report.status ===  
+                                "Pending"  
+                                ? "selected"  
+                                : ""}  
+                            >  
+                                Pending  
+                            </option>  
+
+
+                            <option  
+                                value="Under Review"  
+                                ${report.status ===  
+                                "Under Review"  
+                                ? "selected"  
+                                : ""}  
+                            >  
+                                Under Review  
+                            </option>  
+
+
+                            <option  
+                                value="Resolved"  
+                                ${report.status ===  
+                                "Resolved"  
+                                ? "selected"  
+                                : ""}  
+                            >  
+                                Resolved  
+                            </option>  
+
+                        </select>  
+
+                    `;  
+
+
+
+                    reportsList.appendChild(  
+                        reportCard  
+                    );  
+
+                }  
+            );  
+
+
+
+            // ======================================  
+            // STATUS SELECTORS  
+            // ======================================  
+
+            const statusSelects =  
+                document.querySelectorAll(  
+                    ".status-select"  
+                );  
+
+
+
+            statusSelects.forEach(  
+                function(select) {  
+
+
+                    select.addEventListener(  
+                        "change",  
+                        function() {  
+
+
+                            const reportId =  
+                                Number(  
+                                    this.dataset.id  
+                                );  
+
+
+                            const newStatus =  
+                                this.value;  
+
+
+
+                            updateReportStatus(  
+                                reportId,  
+                                newStatus  
+                            );  
+
+                        }  
+                    );  
+
+                }  
+            );  
+
+        }  
+
+
+
+        // ==========================================  
+        // UPDATE REPORT STATUS  
+        // ==========================================  
+
+        function updateReportStatus(  
+            reportId,  
+            newStatus  
+        ) {  
+
+
+            const reports =  
+                JSON.parse(  
+                    localStorage.getItem(  
+                        "incidentReports"  
+                    )  
+                ) || [];  
+
+
+
+            const report =  
+                reports.find(  
+                    function(item) {  
+
+                        return item.id ===  
+                            reportId;  
+
+                    }  
+                );  
+
+
+
+            // Report not found  
+
+            if (!report) {  
+
+                alert(  
+                    "Report could not be found."  
+                );  
+
+                return;  
+
+            }  
+
+
+
+            // Change status  
+
+            report.status =  
+                newStatus;  
+
+
+
+            // Save reports  
+
+            localStorage.setItem(  
+                "incidentReports",  
+                JSON.stringify(  
+                    reports  
+                )  
+            );  
+
+
+
+            // Confirmation  
+
+            alert(  
+                "Report status updated to: " +  
+                newStatus  
+            );  
+
+
+
+            // Reload dashboard  
+
+            loadReports();  
+
+        }  
+
+
+
+        // ==========================================  
+        // LOGOUT  
+        // ==========================================  
+
+        const logoutButton =  
+            document.getElementById(  
+                "agencyLogoutBtn"  
+            );  
+
+
+        if (logoutButton) {  
+
+            logoutButton.addEventListener(  
+                "click",  
+                function() {  
+
+
+                    localStorage.removeItem(  
+                        "loggedInAgency"  
+                    );  
+
+
+                    window.location.href =  
+                        "agency-login.html";  
+
+                }  
+            );  
+
+        }  
+
+
+
+        // ==========================================  
+        // START DASHBOARD  
+        // ==========================================  
+
+        loadReports();  
+
+    }  
+
+</script>
+
+</body>  </html>

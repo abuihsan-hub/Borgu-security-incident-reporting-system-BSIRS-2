@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Agency Login - Borgu Security</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <div class="login-box">
+
+            <h1>🛡️ Borgu Security</h1>
+
+            <h2>Agency Login</h2>
+
+            <p class="login-subtitle">
+                Authorized security agencies only
+            </p>
+
+
+            <form id="agencyLoginForm">
+
+                <div class="form-group">
+
+                    <label for="agency">
+                        Select Agency
+                    </label>
+
+                    <select id="agency" required>
+
+                        <option value="">
+                            -- Select Agency --
+                        </option>
+
+                        <option value="Police">
+                            Nigeria Police Force
+                        </option>
+
+                        <option value="Army">
+                            Nigerian Army
+                        </option>
+
+                        <option value="Air Force">
+                            Nigerian Air Force
+                        </option>
+
+                        <option value="Fire Service">
+                            Federal Fire Service
+                        </option>
+
+                        <option value="NSCDC">
+                            Nigeria Security and Civil Defence Corps
+                        </option>
+
+                        <option value="FRSC">
+                            Federal Road Safety Corps
+                        </option>
+
+                        <option value="Emergency Management">
+                            Emergency Management Agency
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="agencyEmail">
+                        Official Agency Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="agencyEmail"
+                        placeholder="Enter official agency email"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="agencyPassword">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="agencyPassword"
+                        placeholder="Enter your password"
+                        required
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="login-btn"
+                >
+                    Login to Agency Dashboard
+                </button>
+
+            </form>
+
+
+            <p class="home-link">
+                <a href="index.html">
+                    ← Back to Homepage
+                </a>
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <script src="agency-auth.js"></script>
+
+</body>
+
+</html>

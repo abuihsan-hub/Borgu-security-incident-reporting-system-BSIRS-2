@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Reports - Borgu Security</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="report-container">
+
+        <h1>📋 My Reports</h1>
+
+        <p>
+            View the security incidents you have previously reported.
+        </p>
+
+        <div id="reportsList">
+            <!-- Reports will appear here -->
+        </div>
+
+        <br>
+
+        <a href="dashboard.html">
+            ← Back to Dashboard
+        </a>
+
+    </div>
+
+    <script src="reports.js"></script>
+
+  <script>
+    if (localStorage.getItem("loggedIn") !== "true") {
+        window.location.href = "login.html";
+    }
+</script>
+
+</body>
+</html>

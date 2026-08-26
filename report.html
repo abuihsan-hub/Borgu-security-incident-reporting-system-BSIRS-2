@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Incident - Borgu Security</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="report-container">
+
+        <h1>🚨 Report a Security Incident</h1>
+
+        <p>
+            Please provide accurate information about the incident.
+        </p>
+
+        <form id="incidentForm">
+
+            <label for="incidentType">Incident Type</label>
+            <select id="incidentType" required>
+                <option value="">-- Select Incident Type --</option>
+                <option value="Kidnapping">Kidnapping</option>
+                <option value="Robbery">Robbery</option>
+                <option value="Theft">Theft</option>
+                <option value="Assault">Assault</option>
+                <option value="Fire Outbreak">Fire Outbreak</option>
+                <option value="Accident">Accident</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="location">Location</label>
+            <input
+                type="text"
+                id="location"
+                placeholder="Enter the incident location"
+                required
+            >
+
+            <label for="incidentDate">Date</label>
+            <input
+                type="date"
+                id="incidentDate"
+                required
+            >
+
+            <label for="incidentTime">Time</label>
+            <input
+                type="time"
+                id="incidentTime"
+                requiredi
+            >
+
+            <label for="severity">Severity</label>
+            <select id="severity" required>
+                <option value="">-- Select Severity --</option>
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+                <option value="Critical">Critical</option>
+            </select>
+
+            <label for="description">Description</label>
+            <textarea
+                id="description"
+                rows="6"
+                placeholder="Describe what happened..."
+                required
+            ></textarea>
+
+            <button type="submit">
+                Submit Incident Report
+            </button>
+
+        </form>
+
+        <br>
+
+        <a href="dashboard.html">
+            ← Back to Dashboard
+        </a>
+
+    </div>
+<script src="report.js"></script>
+
+<script>
+    if (localStorage.getItem("loggedIn") !== "true") {
+        window.location.href = "login.html";
+    }
+</script>
+  
+</body>
+</html>
