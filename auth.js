@@ -46,7 +46,8 @@ if (registerForm) {
             });
 
             if (error) {
-                alert(error.message);
+                console.error("SUPABASE REGISTRATION ERROR:", error);
+                alert("Registration error: " + error.message);
                 return;
             }
 
@@ -56,8 +57,8 @@ if (registerForm) {
 
         } catch (error) {
 
-            console.error(error);
-            alert("Registration failed. Please try again.");
+            console.error("REGISTRATION ERROR:", error);
+            alert("Registration failed: " + error.message);
 
         }
     });
@@ -93,7 +94,8 @@ if (loginForm) {
                 });
 
             if (error) {
-                alert(error.message);
+                console.error("SUPABASE LOGIN ERROR:", error);
+                alert("Login error: " + error.message);
                 return;
             }
 
@@ -105,8 +107,8 @@ if (loginForm) {
 
         } catch (error) {
 
-            console.error(error);
-            alert("Login failed. Please try again.");
+            console.error("LOGIN ERROR:", error);
+            alert("Login failed: " + error.message);
 
         }
     });
@@ -123,7 +125,19 @@ if (logoutBtn) {
 
     logoutBtn.addEventListener("click", async function() {
 
-        await supabaseClient.auth.signOut();
+        try {
+
+            const { error } = await supabaseClient.auth.signOut();
+
+            if (error) {
+                console.error("SUPABASE LOGOUT ERROR:", error);
+            }
+
+        } catch (error) {
+
+            console.error("LOGOUT ERROR:", error);
+
+        }
 
         localStorage.removeItem("loggedIn");
 

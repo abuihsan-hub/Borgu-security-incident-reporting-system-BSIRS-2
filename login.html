@@ -6,7 +6,7 @@
 
     <title>Login - Borgu Security Incident Reporting System</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -26,6 +26,7 @@
             <form id="loginForm">
 
                 <div class="form-group">
+
                     <label for="email">Email Address</label>
 
                     <input
@@ -34,9 +35,11 @@
                         placeholder="Enter your email"
                         required
                     >
+
                 </div>
 
                 <div class="form-group">
+
                     <label for="password">Password</label>
 
                     <input
@@ -45,6 +48,7 @@
                         placeholder="Enter your password"
                         required
                     >
+
                 </div>
 
                 <button type="submit" class="login-btn">
@@ -66,13 +70,13 @@
 
     </div>
 
-    <!-- Supabase library MUST load first -->
+    <!-- Supabase -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
     <!-- Supabase connection -->
     <script src="js/supabase.js"></script>
 
-    <!-- BSIRS authentication -->
+    <!-- Authentication -->
     <script src="js/auth.js"></script>
 
 </body>
