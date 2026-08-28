@@ -1,10 +1,9 @@
-<link rel="stylesheet" href="style.css">
-<script src="/app.js"></script>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Login - Borgu Security Incident Reporting System</title>
 
     <link rel="stylesheet" href="css/style.css">
@@ -17,6 +16,7 @@
         <div class="login-box">
 
             <h1>Borgu Security</h1>
+
             <h2>Incident Reporting System</h2>
 
             <p class="login-subtitle">
@@ -27,9 +27,10 @@
 
                 <div class="form-group">
                     <label for="email">Email Address</label>
-                    <input 
-                        type="email" 
-                        id="email" 
+
+                    <input
+                        type="email"
+                        id="email"
                         placeholder="Enter your email"
                         required
                     >
@@ -37,9 +38,10 @@
 
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input 
-                        type="password" 
-                        id="password" 
+
+                    <input
+                        type="password"
+                        id="password"
                         placeholder="Enter your password"
                         required
                     >
@@ -61,21 +63,17 @@
             </p>
 
         </div>
+
     </div>
-<head>
-    ...
-    <link rel="stylesheet" href="style.css">
-</head>
 
-<body>
+    <!-- Supabase library MUST load first -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-    <!-- your page content -->
+    <!-- Supabase connection -->
+    <script src="js/supabase.js"></script>
 
-    <script src="app.js"></script>
-    <script src="auth.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="js/supabase.js"></script>
-<script src="js/auth.js"></script>
+    <!-- BSIRS authentication -->
+    <script src="js/auth.js"></script>
 
 </body>
-</html>  
+</html>

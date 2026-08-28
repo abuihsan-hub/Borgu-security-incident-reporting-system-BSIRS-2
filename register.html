@@ -36,7 +36,6 @@
                     >
                 </div>
 
-
                 <div class="form-group">
                     <label for="registerEmail">Email Address</label>
 
@@ -47,7 +46,6 @@
                         required
                     >
                 </div>
-
 
                 <div class="form-group">
                     <label for="registerPassword">Password</label>
@@ -60,7 +58,6 @@
                     >
                 </div>
 
-
                 <div class="form-group">
                     <label for="confirmPassword">Confirm Password</label>
 
@@ -72,19 +69,16 @@
                     >
                 </div>
 
-
                 <button type="submit" class="login-btn">
                     Register
                 </button>
 
             </form>
 
-
             <p class="register-link">
                 Already have an account?
                 <a href="login.html">Login here</a>
             </p>
-
 
             <p class="home-link">
                 <a href="index.html">← Back to Home</a>
@@ -93,19 +87,15 @@
         </div>
 
     </div>
-<head>
-    ...
-    <link rel="stylesheet" href="style.css">
-</head>
 
-<body>
+    <!-- Supabase library MUST load first -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-    <!-- your page content -->
+    <!-- Supabase connection -->
+    <script src="js/supabase.js"></script>
 
-    <script src="app.js"></script>
-    <script src="auth.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="js/supabase.js"></script>
+    <!-- BSIRS authentication -->
+    <script src="js/auth.js"></script>
 
 </body>
 </html>
